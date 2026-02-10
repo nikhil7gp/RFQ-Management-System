@@ -3,88 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ManuGenix LLC - Professional CNC machining, laser cutting, and sheet metal fabrication services. Fast quotes, quality work, on-time delivery.">
-    <meta name="keywords" content="CNC machining, laser cutting, sheet metal, fabrication, manufacturing, precision parts">
-    <title>ManuGenix LLC - Precision Manufacturing & CNC Services</title>
-    
+    <meta name="description" content="ManuGenix LLC - Professional CNC machining and sheet metal fabrication services">
+    <title>ManuGenix LLC - Precision Manufacturing</title>
     <style>
-        :root {
-            --primary-color: #1e3c72;
-            --secondary-color: #2a5298;
-            --accent-color: #667eea;
-            --accent-light: #764ba2;
-            --cta-color: #ff6b6b;
-            --success-color: #4caf50;
-            --text-dark: #333;
-            --text-light: #666;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-            --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
-            --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
-            --shadow-lg: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
+            color: #333;
         }
 
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 3px;
-        }
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Header - Sticky on scroll */
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             padding: 1rem 0;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: padding 0.3s;
-        }
-
-        header.scrolled {
-            padding: 0.5rem 0;
-            box-shadow: var(--shadow-md);
         }
 
         nav {
@@ -99,225 +41,91 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .logo::before {
-            content: "⚙️";
-            font-size: 1.8rem;
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 2rem;
-            align-items: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             transition: opacity 0.3s;
-            font-weight: 500;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: white;
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
         }
 
         nav a:hover {
-            opacity: 0.9;
+            opacity: 0.8;
         }
 
-        /* Hero Section - Enhanced */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 C150,80 350,20 600,50 C850,80 1050,20 1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"/></svg>') bottom center no-repeat;
-            background-size: cover;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 5rem 2rem;
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease;
         }
 
         .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
             margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
             opacity: 0.9;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* CTA Buttons - Enhanced */
         .cta-button {
             display: inline-block;
-            background: var(--cta-color);
+            background: #ff6b6b;
             color: white;
             padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-md);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        .cta-button:active {
-            transform: translateY(-1px);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            border: 2px solid white;
-            margin-left: 1rem;
-        }
-
-        /* Quick Quote Banner */
-        .quick-quote-banner {
-            background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .quick-quote-banner strong {
-            font-size: 1.1rem;
-        }
-
-        .quick-quote-banner a {
-            color: white;
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        /* Services Section - Grid Layout */
+        /* Services Section */
         .services {
             max-width: 1200px;
-            margin: 5rem auto;
+            margin: 4rem auto;
             padding: 0 2rem;
         }
 
-        .section-header {
+        .services h2 {
             text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            color: #1e3c72;
         }
 
         .services-grid {
@@ -329,24 +137,20 @@
         .service-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s;
-            border-top: 4px solid var(--accent-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .service-card h3 {
-            color: var(--accent-color);
+            color: #667eea;
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .service-card ul {
@@ -355,329 +159,116 @@
         }
 
         .service-card li {
-            padding: 0.75rem 0;
+            padding: 0.5rem 0;
             border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
         }
 
         .service-card li:last-child {
             border-bottom: none;
         }
 
-        .service-card li::before {
-            content: "✓";
-            color: var(--success-color);
+        .service-card li:before {
+            content: "✓ ";
+            color: #4caf50;
             font-weight: bold;
-            flex-shrink: 0;
+            margin-right: 0.5rem;
         }
 
-        /* Capabilities Section */
-        .capabilities {
-            background: var(--bg-light);
-            padding: 5rem 2rem;
-        }
-
-        .capabilities-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .capability-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.3s;
-        }
-
-        .capability-item:hover {
-            transform: scale(1.05);
-        }
-
-        .capability-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .capability-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* How It Works - Timeline */
+        /* How It Works */
         .how-it-works {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: #1e3c72;
         }
 
         .steps {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .step {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .step-number {
-            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            background: #667eea;
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            margin: 0 auto 1.5rem;
-            box-shadow: var(--shadow-md);
+            margin: 0 auto 1rem;
         }
 
         .step h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .step p {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        /* Industries Section */
-        .industries {
-            background: var(--primary-color);
-            color: white;
-            padding: 5rem 2rem;
-        }
-
-        .industries-grid {
-            max-width: 1200px;
-            margin: 3rem auto 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .industry-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
-
-        .industry-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .industry-icon {
-            font-size: 2.5rem;
+            color: #1e3c72;
             margin-bottom: 0.5rem;
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 5rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .testimonials-slider {
+        /* Contact Section */
+        .contact {
             max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
+            margin: 4rem auto;
+            padding: 0 2rem;
             text-align: center;
         }
 
-        .testimonial-text {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .testimonial-company {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Contact Section - Enhanced */
-        .contact {
-            max-width: 1000px;
-            margin: 5rem auto;
-            padding: 0 2rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .contact h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: #1e3c72;
         }
 
         .contact-info {
-            background: var(--bg-light);
+            background: #f8f9fa;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 10px;
+            margin-bottom: 2rem;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
         }
 
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            flex-shrink: 0;
-        }
-
-        .contact-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-            font-size: 1rem;
-        }
-
-        .contact-item p {
-            color: var(--text-light);
-        }
-
-        .contact-item a {
-            color: var(--accent-color);
+        .contact-info a {
+            color: #667eea;
             text-decoration: none;
-            font-weight: 500;
         }
 
-        .contact-item a:hover {
+        .contact-info a:hover {
             text-decoration: underline;
         }
 
-        /* Quote Form Section */
-        .quote-cta {
-            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .quote-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .quote-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        /* Footer - Enhanced */
+        /* Footer */
         footer {
-            background: var(--primary-color);
+            background: #1e3c72;
             color: white;
-            padding: 3rem 2rem 1rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            margin-top: 4rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-        }
-
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
+        footer p {
+            margin: 0.5rem 0;
         }
 
         /* Scroll to Top Button */
@@ -685,55 +276,43 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background: var(--cta-color);
+            background: #ff6b6b;
             color: white;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            opacity: 0;
-            visibility: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s;
+            font-size: 1.5rem;
             z-index: 999;
         }
 
         .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
+            display: flex;
         }
 
         .scroll-top:hover {
             transform: translateY(-5px);
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
             nav ul {
                 position: fixed;
                 top: 60px;
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 60px);
-                background: var(--primary-color);
+                background: #1e3c72;
                 flex-direction: column;
                 justify-content: flex-start;
                 padding: 2rem;
@@ -745,49 +324,33 @@
                 left: 0;
             }
 
-            .menu-toggle {
-                display: flex;
-            }
-
             .hero {
                 padding: 4rem 1.5rem;
-            }
-
-            .hero-stats {
-                gap: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .cta-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
             }
 
             .services,
             .how-it-works,
             .contact {
                 padding: 0 1.5rem;
-                margin: 3rem auto;
+            }
+
+            .how-it-works {
+                margin: 3rem 0;
             }
 
             .services-grid,
-            .steps,
-            .capabilities-grid,
-            .industries-grid {
+            .steps {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
+            .service-card,
+            .step {
+                padding: 1.5rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .contact {
+                margin: 3rem auto;
             }
 
             .scroll-top {
@@ -799,16 +362,12 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.75rem;
+            nav {
+                padding: 0 1rem;
             }
 
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.75rem;
+            .logo {
+                font-size: 1.2rem;
             }
 
             .cta-button {
@@ -816,452 +375,167 @@
                 font-size: 1rem;
             }
 
-            .service-card {
+            .service-card h3,
+            .step h3 {
+                font-size: 1.3rem;
+            }
+
+            .contact-info {
                 padding: 1.5rem;
             }
 
-            .step {
-                padding: 1.5rem;
-            }
-
-            .step-number {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
+            .contact-info p {
+                font-size: 1rem;
             }
         }
 
-        /* Print Styles */
+        /* Tablet specific */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Smooth transitions */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Print styles */
         @media print {
             header,
             .scroll-top,
-            .cta-button,
-            .quick-quote-banner {
+            .cta-button {
                 display: none;
             }
-
-            .hero,
-            .services,
-            .contact {
-                page-break-inside: avoid;
-            }
-        }
-
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        *:focus-visible {
-            outline: 3px solid var(--accent-color);
-            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+    <header>
         <nav>
-            <div class="logo" aria-label="ManuGenix LLC">ManuGenix LLC</div>
-            <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <div class="logo">ManuGenix LLC</div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#industries">Industries</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header" class="cta-button" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Get Quote</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Quick Quote Banner -->
-    <div class="quick-quote-banner">
-        <strong>⚡ Need a fast quote?</strong>
-        <span>Upload your files and get pricing within 24 hours →</span>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header">Start Now</a>
-    </div>
-
-    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Precision Sheet Metal & CNC Services</h1>
-            <p>From Concept to Completion - Fast, Accurate, Reliable Manufacturing</p>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">24hrs</span>
-                    <span class="stat-label">Quote Turnaround</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">99.8%</span>
-                    <span class="stat-label">On-Time Delivery</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">1000+</span>
-                    <span class="stat-label">Parts Delivered</span>
-                </div>
-            </div>
-            
-            <div style="margin-top: 2rem;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header" class="cta-button" target="_blank">Request a Quote →</a>
-                <a href="#services" class="cta-button cta-secondary">Our Services</a>
-            </div>
-        </div>
+        <h1>Precision Sheet Metal & CNC Services</h1>
+        <p>From Concept to Completion - Fast, Accurate, Reliable</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header" class="cta-button" target="_blank">Request a Quote →</a>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header">
-            <h2>Our Manufacturing Services</h2>
-            <p>Complete fabrication solutions from prototyping to production</p>
-        </div>
-        
+        <h2>Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3><span>🔧</span> CNC Machining</h3>
+                <h3>🔧 CNC Machining</h3>
                 <ul>
-                    <li>Precision milling & turning</li>
-                    <li>3-axis, 4-axis, 5-axis machining</li>
+                    <li>Precision milling</li>
+                    <li>Turning operations</li>
                     <li>Complex geometries</li>
                     <li>Tight tolerances (±0.01mm)</li>
-                    <li>Prototype to production runs</li>
-                    <li>All metals & plastics</li>
+                    <li>Prototype to production</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <h3><span>⚡</span> Laser Cutting</h3>
+                <h3>⚡ Laser Cutting</h3>
                 <ul>
                     <li>2D & 3D laser cutting</li>
-                    <li>Fiber & CO2 lasers</li>
                     <li>Multiple materials</li>
                     <li>Up to 25mm thickness</li>
                     <li>Clean, precise edges</li>
-                    <li>Fast turnaround times</li>
+                    <li>Fast turnaround</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <h3><span>🔨</span> Sheet Metal Fabrication</h3>
+                <h3>🔨 Sheet Metal Fabrication</h3>
                 <ul>
                     <li>Bending & forming</li>
-                    <li>TIG & MIG welding</li>
-                    <li>Spot welding</li>
+                    <li>Welding (TIG, MIG)</li>
                     <li>Assembly services</li>
                     <li>Custom enclosures</li>
-                    <li>Hardware installation</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3><span>🎨</span> Finishing Services</h3>
-                <ul>
-                    <li>Powder coating</li>
-                    <li>Anodizing</li>
-                    <li>Plating (chrome, zinc, nickel)</li>
-                    <li>Painting & silk screening</li>
-                    <li>Brushing & polishing</li>
-                    <li>Passivation</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3><span>📐</span> Design Support</h3>
-                <ul>
-                    <li>DFM (Design for Manufacturing)</li>
-                    <li>CAD file conversion</li>
-                    <li>Engineering consultation</li>
-                    <li>Prototyping assistance</li>
-                    <li>Material recommendations</li>
-                    <li>Cost optimization</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3><span>⚙️</span> Assembly & Integration</h3>
-                <ul>
-                    <li>Complete assembly services</li>
-                    <li>Hardware insertion</li>
-                    <li>Sub-assembly integration</li>
-                    <li>Quality inspection</li>
-                    <li>Packaging & kitting</li>
-                    <li>Drop shipping available</li>
+                    <li>Powder coating available</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Capabilities -->
-    <section class="capabilities">
-        <div class="section-header">
-            <h2>Our Capabilities</h2>
-            <p>State-of-the-art equipment and processes</p>
-        </div>
-        
-        <div class="capabilities-grid">
-            <div class="capability-item">
-                <div class="capability-icon">📏</div>
-                <h3>Precision</h3>
-                <p>Tolerances down to ±0.01mm</p>
-            </div>
-            <div class="capability-item">
-                <div class="capability-icon">⚡</div>
-                <h3>Speed</h3>
-                <p>24-hour quote turnaround</p>
-            </div>
-            <div class="capability-item">
-                <div class="capability-icon">🎯</div>
-                <h3>Quality</h3>
-                <p>ISO 9001 certified processes</p>
-            </div>
-            <div class="capability-item">
-                <div class="capability-icon">🔄</div>
-                <h3>Flexibility</h3>
-                <p>1 to 10,000+ piece runs</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="section-header">
-            <h2>How It Works</h2>
-            <p>Simple, streamlined process from quote to delivery</p>
-        </div>
-        
+    <section class="how-it-works">
+        <h2>How It Works</h2>
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Upload Your Files</h3>
-                <p>Submit your CAD files (DXF, DWG, STEP, IGES) and specifications through our online quote form</p>
+                <h3>Submit RFQ</h3>
+                <p>Fill out our simple form with your requirements and upload drawings</p>
             </div>
 
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Receive Quote</h3>
-                <p>Get a detailed quote within 24 hours including pricing, lead time, and any design recommendations</p>
+                <h3>Get Quote</h3>
+                <p>Receive a detailed quote within 24 hours</p>
             </div>
 
             <div class="step">
                 <div class="step-number">3</div>
                 <h3>Approve & Order</h3>
-                <p>Review your quote, approve the design, and we'll begin production immediately</p>
+                <p>Review and approve the quote to start production</p>
             </div>
 
             <div class="step">
                 <div class="step-number">4</div>
-                <h3>Quality Check</h3>
-                <p>Every part undergoes rigorous quality inspection to ensure it meets your specifications</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">5</div>
-                <h3>Fast Delivery</h3>
-                <p>Receive your precision parts on time with full tracking and documentation</p>
+                <h3>Receive Parts</h3>
+                <p>Get your precision parts delivered on time</p>
             </div>
         </div>
     </section>
 
-    <!-- Industries We Serve -->
-    <section class="industries" id="industries">
-        <div class="section-header" style="color: white;">
-            <h2>Industries We Serve</h2>
-            <p style="color: rgba(255,255,255,0.9);">Trusted by leading companies across multiple sectors</p>
-        </div>
-        
-        <div class="industries-grid">
-            <div class="industry-item">
-                <div class="industry-icon">🏥</div>
-                <h3>Medical</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">✈️</div>
-                <h3>Aerospace</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">🚗</div>
-                <h3>Automotive</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">🏭</div>
-                <h3>Industrial</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">💻</div>
-                <h3>Electronics</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">⚡</div>
-                <h3>Energy</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">🔬</div>
-                <h3>Research</h3>
-            </div>
-            <div class="industry-item">
-                <div class="industry-icon">🏗️</div>
-                <h3>Construction</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-header">
-            <h2>What Our Customers Say</h2>
-        </div>
-        
-        <div class="testimonials-slider">
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"ManuGenix delivered exceptional quality on our prototype enclosures. Fast turnaround and excellent communication throughout the process. Highly recommended!"</p>
-                <p class="testimonial-author">John Smith</p>
-                <p class="testimonial-company">Tech Innovations Inc.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p>Ready to start your project? Contact us today</p>
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>📧 Email:</strong> <a href="mailto:admin@manugenixllc.com">admin@manugenixllc.com</a></p>
+            <p><strong>📱 Phone:</strong> <a href="tel:+18124418300">+1 (812) 441-8300</a></p>
+            <p><strong>📍 Location:</strong> Madison, Indiana</p>
+            <p><strong>🕐 Hours:</strong> Mon-Sat, 9:00 AM - 6:00 PM</p>
         </div>
-        
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:admin@manugenixllc.com">admin@manugenixllc.com</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <h3>Phone</h3>
-                        <p><a href="tel:+18124418300">+1 (812) 441-8300</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <h3>Location</h3>
-                        <p>Madison, Indiana, USA</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">🕐</div>
-                    <div>
-                        <h3>Business Hours</h3>
-                        <p>Mon-Fri: 9:00 AM - 6:00 PM EST<br>
-                        Sat: 9:00 AM - 2:00 PM EST</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-info" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Ready to Get Started?</h3>
-                <p style="margin-bottom: 1.5rem; color: var(--text-light);">Upload your files and receive a detailed quote within 24 hours</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header" class="cta-button" target="_blank">Request Quote Now →</a>
-            </div>
-        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header" class="cta-button" target="_blank">Request a Quote Now →</a>
     </section>
 
-    <!-- Quote CTA -->
-    <section class="quote-cta">
-        <h2>Start Your Project Today</h2>
-        <p>Join hundreds of satisfied customers who trust ManuGenix for their manufacturing needs</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHJHILsY-P29KQ1zfw6Rhwe5sOr8IoJRYPhaWWgdEH6I9rJg/viewform?usp=header" class="cta-button" target="_blank" style="background: white; color: var(--accent-color);">Get Your Free Quote →</a>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>ManuGenix LLC</h3>
-                <p>Precision manufacturing and CNC services for industries worldwide.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Twitter">𝕏</a>
-                    <a href="#" aria-label="Facebook">f</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#services">CNC Machining</a></li>
-                    <li><a href="#services">Laser Cutting</a></li>
-                    <li><a href="#services">Sheet Metal Fabrication</a></li>
-                    <li><a href="#services">Finishing Services</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#home">About Us</a></li>
-                    <li><a href="#industries">Industries</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Design Guidelines</a></li>
-                    <li><a href="#">Material Guide</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 ManuGenix LLC. All rights reserved.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.8;">Precision Manufacturing | Quality You Can Trust</p>
-        </div>
+        <p>&copy; 2026 ManuGenix LLC. All rights reserved.</p>
+        <p>Precision Manufacturing | Quality You Can Trust</p>
     </footer>
 
     <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        ↑
-    </div>
+    <div class="scroll-top" id="scrollTop">↑</div>
 
-    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
         // Close menu when clicking on a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
@@ -1278,22 +552,6 @@
                     });
                 }
             });
-        });
-
-        // Sticky Header on Scroll
-        const header = document.getElementById('header');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
         });
 
         // Scroll to Top Button
@@ -1314,62 +572,12 @@
             });
         });
 
-        // Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and steps
-        document.querySelectorAll('.service-card, .step, .capability-item, .industry-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
-
-        // Performance: Lazy load images
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        }
-
-        // Add active state to current nav item
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Console Easter Egg
-        console.log('%cManuGenix LLC', 'font-size: 24px; font-weight: bold; color: #667eea;');
-        console.log('%cLooking for a job? Email us at admin@manugenixllc.com', 'font-size: 14px; color: #666;');
     </script>
 </body>
 </html>
